@@ -204,6 +204,8 @@ def merge_data_with_local(remote_data, user):
 parse_api_data()    
 
 df = pd.DataFrame.from_dict(result)
+if not os.path.exists("result/"):
+    os.mkdir("result")
 df.to_csv(os.path.join(RESULT_PATH, "result.csv"))
 grouped = df.groupby(["user", "floor", "on_stream", "floor_result"]).size().unstack(fill_value=0)
 grouped = grouped.rename(columns={0: "fail", 1:"success"})
