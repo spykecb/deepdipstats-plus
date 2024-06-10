@@ -1,0 +1,5 @@
+.env
+debug.log
+oauth_token.json
+result/aggregated.csv
+result/result.csv
