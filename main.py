@@ -107,7 +107,8 @@ def convert_to_jst(datetime_str):
 
 def parse_api_data():
     twitch_url = TwitchUrl()
-    twitch_url.init()
+    if enable_twitch_url:
+        twitch_url.init()
     for user in args.players:
         if debug_mode and user not in debug_limit_user:
             continue

@@ -8,6 +8,7 @@ The produced output will be in csv format
 ## Requirements
 
 1. Python (3.9+ preferrably)
+   Install required packages `pip install -r requirements.txt`
 2. Twitch API access (optional; only if you want to enable Twitch URL's in the debug log for each fall/completion)
 
 ## How to run

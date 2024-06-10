@@ -20,6 +20,9 @@ class TwitchUrl:
         self.user_videos_cache = dict()
 
     def get_oauth_token(self):
+        if not os.path.isfile('oauth_token.json'):
+            return None
+
         with open('oauth_token.json', 'r') as json_file:
             data = ''.join(json_file.readlines())
             if not data:
@@ -28,6 +31,9 @@ class TwitchUrl:
             return loaded_json["access_token"]
 
     def refresh_oath_token(self):
+        if CLIENT_ID == None or CLIENT_ID == "" or CLIENT_SECRET == None or CLIENT_SECRET == "":
+            print("Please set twitch client ID and secret in the .env file!")
+            return
         # URL for the token request
         url = 'https://id.twitch.tv/oauth2/token'
 
@@ -55,6 +61,9 @@ class TwitchUrl:
 
     # Helper function to get the video ID and the start time
     def get_video_info(self, streamer_name, timestamp_utc):
+        if CLIENT_ID == None or CLIENT_ID == "" or CLIENT_SECRET == None or CLIENT_SECRET == "":
+            print("Please set twitch client ID and secret in the .env file!")
+            return
         if streamer_name not in self.user_videos_cache:
             print("Calling Twitch API...")
             headers = {
