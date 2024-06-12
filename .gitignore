@@ -1,4 +1,5 @@
 .env
+__pycache__/
 debug.log
 oauth_token.json
 result/aggregated.csv

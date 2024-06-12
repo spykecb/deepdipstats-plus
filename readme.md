@@ -3,7 +3,14 @@
 This is just a little script for the Deep Dip 2 event.
 
 It will extract the API data of deepdipstats.com and analyze each floor's difficulty among the top players.
-The produced output will be in csv format
+
+The produced output will be in csv format:
+| Column | Description |
+|---------|-------------|
+| user | Username |
+| floor | Floor (level) |
+| fail | Count of how many times the player has fell from that floor to any lower floor |
+| success | Count of how many times the player has reached the next floor (n → n+1) |
 
 ## Requirements
 
